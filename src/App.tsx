@@ -1,14 +1,16 @@
 import logo from './icons/logo.png'
 import main from './img/main.jpg'
 
+const background = {
+        background: `url(${main})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+    }
+
 function App() {
     return <>
-        <div className="promo" style={{
-            background: `url(${main})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-        }}>
+        <div className="promo" style={background}>
             <div className='container'>
                 <header className="header">
                     <a href="#" className="header__logo">
