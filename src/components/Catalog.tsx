@@ -1,6 +1,11 @@
 import {CatalogItem} from "./CatalogItem";
+import React from "react";
 
-export const Catalog = () => {
+type Catalog = {
+    onOrderModalClick: () => void
+}
+
+export const Catalog: React.FC<Catalog> = ({onOrderModalClick}) => {
     return <section className='catalog'>
         <div className="container">
             <h2 className="title">Каталог пульсометров</h2>
@@ -16,9 +21,9 @@ export const Catalog = () => {
                 </li>
             </ul>
             <div className="catalog__content catalog__content_active">
-                <CatalogItem/>
-                <CatalogItem/>
-                <CatalogItem/>
+                <CatalogItem onOrderModalClick={onOrderModalClick}/>
+                <CatalogItem onOrderModalClick={onOrderModalClick}/>
+                <CatalogItem onOrderModalClick={onOrderModalClick}/>
             </div>
             {/*<div className="catalog__content">*/}
             {/*    <div className="catalog-item">*/}

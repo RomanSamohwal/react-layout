@@ -1,8 +1,11 @@
 import pulsometr from "../img/pulsometr.png";
-import {useState} from "react";
+import React, {useState} from "react";
 
+type CatalogItemProps = {
+    onOrderModalClick: () => void
+}
 
-export const CatalogItem = () => {
+export const CatalogItem: React.FC<CatalogItemProps> = ({onOrderModalClick}) => {
     const [isToggle, setIsToggle] = useState(true)
 
     const onClickHandler = (event: any) => {
@@ -37,7 +40,7 @@ export const CatalogItem = () => {
                     </li>
                     <a href="#" className="catalog-item__back" onClick={onClickHandler}>назад</a>
                 </ul>}
-               </div>
+            </div>
 
             <hr/>
 
@@ -46,7 +49,7 @@ export const CatalogItem = () => {
                     <div className="catalog-item__old-price">6 990 руб.</div>
                     <div className="catalog-item__price">6 641 руб.</div>
                 </div>
-                <button className="button button_mini">КУПИТЬ</button>
+                <button className="button button_mini" onClick={onOrderModalClick}>КУПИТЬ</button>
             </div>
         </div>
     </>
