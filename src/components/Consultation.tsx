@@ -1,4 +1,5 @@
 import consultation from "../img/consultation.jpg";
+import React from "react";
 
 const background = {
     background: `url(${consultation})`,
@@ -7,7 +8,10 @@ const background = {
     backgroundSize: 'cover',
 }
 
-export const Consultation = () => {
+type ConsultationProps = {
+    onThanksModalClick: () => void
+}
+export const Consultation: React.FC<ConsultationProps> = ({onThanksModalClick}) => {
     return <section className='consultation' style={background}>
         <div className="container">
             <h2 className="title title_left">
@@ -23,7 +27,9 @@ export const Consultation = () => {
                 <input name="phone" required placeholder="Ваш телефон" type="number"/>
                 <input name="email" required placeholder="Ваш E-mail" type="email"/>
 
-                <button className="button button_submit">заказать консультацию</button>
+                <button className="button button_submit" onClick={onThanksModalClick}>
+                    заказать консультацию
+                </button>
             </form>
         </div>
     </section>

@@ -1,17 +1,17 @@
 import {FC} from "react";
 
 type ConsultationModalProps = {
-    isConsultationModal: boolean
     closeConsultationModal: () => void
+    onThanksModalClick: () => void
+    isConsultationModal: boolean
 }
 
 export const ConsultationModal: FC<ConsultationModalProps> =
-    ({isConsultationModal, closeConsultationModal}) => {
-        let border = isConsultationModal ? {display: 'block'} : {display: 'none'}
-
+    ({closeConsultationModal, onThanksModalClick, isConsultationModal}) => {
+        let display = isConsultationModal ? {display: 'block'} : {display: 'none'}
         return <>
-            <div className="overlay" style={border}>
-                <div className="modal" id="consultation" style={border}>
+            <div className="overlay" style={display}>
+                <div className="modal" id="consultation" style={display}>
                     <div className="modal__close" onClick={closeConsultationModal}>&times;</div>
                     <div className="modal__subtitle">Просто заполните форму заявки</div>
                     <div className="modal__descr">и мы перезвоним вам в течении 10 минут</div>
@@ -20,7 +20,9 @@ export const ConsultationModal: FC<ConsultationModalProps> =
                         <input name="phone" placeholder="Ваш телефон"/>
                         <input name="email" placeholder="Ваш E-mail" type="email"/>
 
-                        <button className="button button_submit">заказать консультацию</button>
+                        <button className="button button_submit" onClick={onThanksModalClick}>
+                            заказать консультацию
+                        </button>
                     </form>
                 </div>
             </div>
