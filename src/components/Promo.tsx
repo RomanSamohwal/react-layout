@@ -17,7 +17,7 @@ type PromoProps = {
 }
 export const Promo: React.FC<PromoProps> = ({onConsultationClick}) => {
     return <>
-        <section className="promo" style={background}>
+        <section id='up' className="promo" style={background}>
             <div className='container'>
                 <header className="header">
                     <a href="#" className="header__logo">

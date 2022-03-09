@@ -6,15 +6,16 @@ import {Catalog} from "./components/Catalog";
 import {Feed} from "./components/Feed";
 import {Footer} from "./components/Footer";
 import {ConsultationModal} from "./components/ConsultationModal";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {ThanksModal} from "./components/ThanksModal";
 import {OrderModal} from "./components/OrderModal";
+import {Pageup} from "./components/Pageup";
 
 function App() {
+
     const [isConsultationModal, setIsConsultationModal] = useState(false)
     const [isThanksModal, setIsThanksModal] = useState(false)
     const [isOrderModal, setIsOrderModal] = useState(false)
-
 
     const handlerConsultationClick = () => {
         setIsConsultationModal(true)
@@ -58,6 +59,7 @@ function App() {
                     closeOrderModal={closeOrderModal}
                     onThanksModalClick={handlerThanksModalClick}
         />
+         <Pageup/>
     </>
 }
 
