@@ -20,7 +20,7 @@ export const Advantages = () => {
                         </div>
                     </div>
                     <div className="advantages__item">
-                        <img src={heart} alt="heart" className="advantages__icon"/>
+                        <img src={heart} alt="heart" className="advantages__icon advantages__icon_animated"/>
                             <div className="advantages__subtitle">
                                 Заботимся о здоровье
                             </div>
